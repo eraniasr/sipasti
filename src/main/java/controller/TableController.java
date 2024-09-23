@@ -30,6 +30,9 @@ public class TableController implements Initializable {
     private TableColumn<Surat, String> colNomor, colUnitPengaju, colNomorSurat, colPerihal, colTanggal, colJam, colPelaksanaTugas,
             colStatusTerkait, colStatusDisposisi, colStatusPengajuan, colPermasalahan, colStatusPembayaran;
 
+    @FXML
+    private TableColumn<Surat, String> colDekan, colWadek, colKabag, colJft;
+
     private List<List<Object>> val;
 
     private Stage stage;
@@ -75,51 +78,17 @@ public class TableController implements Initializable {
             counter++;
         }
 
-        //colNomor = new TableColumn<>("No.");
         colNomor.setCellValueFactory(c -> c.getValue().getNomor());
-
-        //colUnitPengaju = new TableColumn<>("Unit Pengusul Ajuan");
         colUnitPengaju.setCellValueFactory(c -> c.getValue().getUnitPengaju());
-
-        //colNomorSurat = new TableColumn<>("No. Surat Ajuan");
         colNomorSurat.setCellValueFactory(c -> c.getValue().getNomorSurat());
-
-        //colPerihal = new TableColumn<>("Perihal Surat Ajuan");
         colPerihal.setCellValueFactory(c -> c.getValue().getPerihal());
-
-        //colTanggal = new TableColumn<>("Tanggal diajukan");
         colTanggal.setCellValueFactory(c -> c.getValue().getTanggalPengajuan());
-
-        //colJam = new TableColumn<>("Jam diajukan");
         colJam.setCellValueFactory(c -> c.getValue().getJamPengajuan());
-
-        //colStatusDisposisi = new TableColumn<>("Status Disposisi");
         colStatusDisposisi.setCellValueFactory(c -> c.getValue().getStatusDisposisi());
-
-        //colPelaksanaTugas = new TableColumn<>("Pelaksana Tugas");
         colPelaksanaTugas.setCellValueFactory(c -> c.getValue().getPelaksanaTugas());
-
-        //colStatusPengajuan = new TableColumn<>("Status Surat Ajuan");
         colStatusPengajuan.setCellValueFactory(c -> c.getValue().getStatusPengajuan());
-
-        //colPermasalahan = new TableColumn<>("Permasalahan");
         colPermasalahan.setCellValueFactory(c -> c.getValue().getPermasalahan());
-
-        //colStatusTerkait = new TableColumn<>("Status Bagian Terkait");
-        //colStatusTerkait.getColumns().addAll(colPelaksanaTugas, colStatusPengajuan, colPermasalahan);
-
-        //colStatusPembayaran = new TableColumn<>("Status Pembayaran");
         colStatusPembayaran.setCellValueFactory(c -> c.getValue().getStatusPembayaran());
-
-//        table.getColumns().add(colNomor);
-//        table.getColumns().add(colUnitPengaju);
-//        table.getColumns().add(colNomorSurat);
-//        table.getColumns().add(colPerihal);
-//        table.getColumns().add(colTanggal);
-//        table.getColumns().add(colJam);
-//        table.getColumns().add(colStatusDisposisi);
-//        //table.getColumns().add(colStatusTerkait);
-//        table.getColumns().add(colStatusPembayaran);
 
         table.setItems(obList);
     }

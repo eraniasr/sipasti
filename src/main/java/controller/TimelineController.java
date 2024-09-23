@@ -33,19 +33,19 @@ public class TimelineController implements Initializable {
     private Button backButton;
 
     static String[] dates;
-    static String perihalStr, noSuratStr;
+    static String perihalStr, noSuratStr, dekanStr, wadekStr, kabagStr, jftStr;
 
     protected static void showTimeline(Surat surat, MouseEvent event) throws IOException {
         //dates = surat.createTimeline();
         perihalStr = surat.getPerihal().get();
         noSuratStr = surat.getNomorSurat().get();
+        dekanStr = surat.getDekan();
+        wadekStr = surat.getWadek();
+        kabagStr = surat.getKabag();
+        jftStr = surat.getJft();
         root = FXMLLoader.load(TimelineController.class.getResource("/fxml/timeline.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setMaximized(true);
-//        stage.show();
     }
 
     @FXML
@@ -53,23 +53,15 @@ public class TimelineController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("/fxml/table.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setMaximized(true);
-//        stage.show();
     }
 
     @FXML
     public void initialize(URL url, ResourceBundle rb){
-//        date1.setText(dates[0]);
-//        date2.setText(dates[1]);
-//        date3.setText(dates[2]);
-//        date4.setText(dates[3]);
         noSurat.setText(noSuratStr);
         perihal.setText(perihalStr);
-        date1.setText("tu");
-        date2.setText("wa");
-        date3.setText("ga");
-        date4.setText("pat");
+        date1.setText(dekanStr);
+        date2.setText(wadekStr);
+        date3.setText(kabagStr);
+        date4.setText(jftStr);
     }
 }

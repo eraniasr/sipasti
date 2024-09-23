@@ -26,16 +26,16 @@ public class Surat {
             unitPengaju = new SimpleStringProperty((String) surat.get(4));
             nomorSurat = new SimpleStringProperty((String) surat.get(6));
             perihal = new SimpleStringProperty((String) surat.get(8));
+            dekan = (String) surat.get(15);
+            wadek = (String) surat.get(18);
+            kabag = (String) surat.get(30);
             pelaksanaTugas = new SimpleStringProperty((String) surat.get(38));
             statusDisposisi = new SimpleStringProperty((String) surat.get(39));
             statusPengajuan = new SimpleStringProperty((String) surat.get(42));
             permasalahan = new SimpleStringProperty((String) surat.get(43));
+            jft = (String) surat.get(68);
             statusPembayaran = new SimpleStringProperty((String) surat.get(87));
             // blm kepikiran gimana baiknya bikin timestamp untuk timeline nanti
-            dekan = (String) surat.get(15);
-            wadek = (String) surat.get(18);
-            kabag = (String) surat.get(30);
-            jft = (String) surat.get(68);
             //timestamps = surat;
         }
 
@@ -74,10 +74,6 @@ public class Surat {
     // Set up untuk bagian tabel
     public StringProperty getNomor() {
         return new SimpleStringProperty(String.valueOf(nomor));
-    }
-
-    public String getDekan() {
-        return dekan;
     }
 
     public StringProperty getUnitPengaju(){
@@ -120,7 +116,23 @@ public class Surat {
         return statusPengajuan;
     }
 
-//    public List<Timestamp> verifKabag(){
+    public String getDekan() {
+        return dekan;
+    }
+
+    public String getWadek() {
+        return wadek;
+    }
+
+    public String getKabag() {
+        return kabag;
+    }
+
+    public String getJft() {
+        return jft;
+    }
+
+    //    public List<Timestamp> verifKabag(){
 //        List<Timestamp> kabag = new ArrayList<>();
 //        Timestamp terimaKabag = null;
 //        Timestamp keluarKabag = null;
