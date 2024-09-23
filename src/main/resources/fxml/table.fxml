@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER" prefHeight="629.0" prefWidth="1014.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TableController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="454.0" prefWidth="818.0" style="-fx-background-color: #ffffff;" GridPane.rowIndex="1">
+         <content>
+            <TableView fx:id="table" prefHeight="502.0" prefWidth="949.0">
+               <columns>
+                  <TableColumn fx:id="colNomor" prefWidth="34.40002590417862" text="No." />
+                  <TableColumn fx:id="colUnitPengaju" prefWidth="124.7999496459961" text="Unit Pengusul Ajuan" />
+                  <TableColumn fx:id="colNomorSurat" prefWidth="115.20001220703125" text="No. Surat Ajuan" />
+                  <TableColumn fx:id="colPerihal" prefWidth="475.19989013671875" text="Perihal Surat Ajuan" />
+                  <TableColumn fx:id="colTanggal" prefWidth="110.4000244140625" text="Tanggal Diajukan" />
+                  <TableColumn fx:id="colJam" prefWidth="89.5999755859375" text="Jam Diajukan" />
+                  <TableColumn fx:id="colStatusDisposisi" prefWidth="111.99993896484375" text="Status Disposisi" />
+                  <TableColumn prefWidth="198.4000244140625" text="Status Bagian Terkait">
+                     <columns>
+                        <TableColumn fx:id="colPelaksanaTugas" prefWidth="101.59991455078125" text="Pelaksana Tugas" />
+                        <TableColumn fx:id="colStatusPengajuan" prefWidth="115.199951171875" text="Status Surat Ajuan" />
+                        <TableColumn fx:id="colPermasalahan" prefWidth="95.20001220703125" text="Permasalahan" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="colStatusPembayaran" prefWidth="142.39996337890625" text="Status Pembayaran" />
+               </columns></TableView>
+         </content></ScrollPane>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="404.20001220703125" minWidth="10.0" prefWidth="213.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="605.0" minWidth="10.0" prefWidth="605.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ChoiceBox prefWidth="173.0">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <TextField prefHeight="26.0" prefWidth="453.0" promptText="Cari di sini..." GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets right="30.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" percentHeight="20.0" prefHeight="30.0" />
+      <RowConstraints percentHeight="80.0" />
+   </rowConstraints>
+</GridPane>
