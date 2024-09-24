@@ -22,7 +22,7 @@ public class TableController implements Initializable {
 
     @FXML
     private TableColumn<Surat, String> colNomor, colUnitPengaju, colNomorSurat, colPerihal, colTanggal, colJam, colPelaksanaTugas,
-            colStatusTerkait, colStatusDisposisi, colStatusPengajuan, colPermasalahan, colStatusPembayaran;
+            colStatusDisposisi, colStatusPengajuan, colPermasalahan, colStatusPembayaran;
 
     private List<List<Object>> val;
 
