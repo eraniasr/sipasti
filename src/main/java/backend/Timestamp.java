@@ -5,10 +5,10 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 
 public class Timestamp implements Comparable<Timestamp> {
 
-    private String event;
     private LocalDate tanggal;
     private LocalTime jam;
     private LocalDateTime waktu;
@@ -19,27 +19,34 @@ public class Timestamp implements Comparable<Timestamp> {
         DMY, MDY
     }
 
-    public Timestamp(String ev, Object date, Object time, DATE_TYPE dateType){
-        event = ev;
-        String[] dateStr = date.toString().split("/");
-        switch (dateType){
-            case DMY:
-                tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[1]), Integer.parseInt(dateStr[0]));
-            case MDY:
-                tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[0]), Integer.parseInt(dateStr[1]));
+    public Timestamp(Object date, Object time, DATE_TYPE dateType){
+        if (date != null){
+            String[] dateStr = date.toString().split("/");
+            if (dateStr.length == 3){
+                switch (dateType){
+                    case DMY:
+                        tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[1]), Integer.parseInt(dateStr[0]));
+                    case MDY:
+                        tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[0]), Integer.parseInt(dateStr[1]));
+                }
+                jam = LocalTime.parse(time.toString(), tf);
+                waktu = jam.atDate(tanggal);
+            }
         }
-        jam = LocalTime.parse(time.toString(), tf);
-        waktu = jam.atDate(tanggal);
     }
 
-    public Timestamp(String ev, Object date, DATE_TYPE dateType){
-        event = ev;
-        String[] dateStr = date.toString().split("/");
-        switch (dateType){
-            case DMY:
-                tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[1]), Integer.parseInt(dateStr[0]));
-            case MDY:
-                tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[0]), Integer.parseInt(dateStr[1]));
+    public Timestamp(Object date, DATE_TYPE dateType){
+        if (date != null) {
+            String[] dateStr = date.toString().split("/");
+            if (dateStr.length == 3){
+                switch (dateType){
+                    case DMY:
+                        tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[1]), Integer.parseInt(dateStr[0]));
+                    case MDY:
+                        tanggal = LocalDate.of(Integer.parseInt(dateStr[2]), Integer.parseInt(dateStr[0]), Integer.parseInt(dateStr[1]));
+                }
+                waktu = LocalTime.MIN.atDate(tanggal);
+            }
         }
     }
 
@@ -70,7 +77,9 @@ public class Timestamp implements Comparable<Timestamp> {
         return waktu;
     }
 
-    public String getEvent() {
-        return event;
+    public String getWaktuFormatted(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.forLanguageTag("id"));
+        if (waktu == null) return "";
+        return dtf.format(waktu);
     }
 }

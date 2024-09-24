@@ -4,17 +4,11 @@ import backend.Surat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
@@ -30,14 +24,7 @@ public class TableController implements Initializable {
     private TableColumn<Surat, String> colNomor, colUnitPengaju, colNomorSurat, colPerihal, colTanggal, colJam, colPelaksanaTugas,
             colStatusTerkait, colStatusDisposisi, colStatusPengajuan, colPermasalahan, colStatusPembayaran;
 
-    @FXML
-    private TableColumn<Surat, String> colDekan, colWadek, colKabag, colJft;
-
     private List<List<Object>> val;
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
     @FXML
     public void initialize (URL url, ResourceBundle rb){
@@ -98,7 +85,6 @@ public class TableController implements Initializable {
     protected void clickItem(MouseEvent event) throws IOException {
         if (event.getClickCount() == 1)
         {
-            System.out.println(table.getSelectionModel().getSelectedItem().getDekan());
             TimelineController.showTimeline(table.getSelectionModel().getSelectedItem(), event);
         }
     }

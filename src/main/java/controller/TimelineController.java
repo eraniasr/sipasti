@@ -23,7 +23,6 @@ import java.util.ResourceBundle;
 public class TimelineController implements Initializable {
 
     private static Stage stage;
-    private static Scene scene;
     private static Parent root;
 
     @FXML
@@ -33,16 +32,12 @@ public class TimelineController implements Initializable {
     private Button backButton;
 
     static String[] dates;
-    static String perihalStr, noSuratStr, dekanStr, wadekStr, kabagStr, jftStr;
+    static String perihalStr, noSuratStr;
 
     protected static void showTimeline(Surat surat, MouseEvent event) throws IOException {
-        //dates = surat.createTimeline();
+        dates = surat.createTimeline();
         perihalStr = surat.getPerihal().get();
         noSuratStr = surat.getNomorSurat().get();
-        dekanStr = surat.getDekan();
-        wadekStr = surat.getWadek();
-        kabagStr = surat.getKabag();
-        jftStr = surat.getJft();
         root = FXMLLoader.load(TimelineController.class.getResource("/fxml/timeline.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
@@ -59,9 +54,9 @@ public class TimelineController implements Initializable {
     public void initialize(URL url, ResourceBundle rb){
         noSurat.setText(noSuratStr);
         perihal.setText(perihalStr);
-        date1.setText(dekanStr);
-        date2.setText(wadekStr);
-        date3.setText(kabagStr);
-        date4.setText(jftStr);
+        date1.setText(dates[0]);
+        date2.setText(dates[1]);
+        date3.setText(dates[2]);
+        date4.setText(dates[3]);
     }
 }
