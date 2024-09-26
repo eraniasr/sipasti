@@ -3,11 +3,10 @@ import backend.SheetsQuickstart;
 import backend.Surat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +22,12 @@ public class TableController implements Initializable {
     @FXML
     private TableColumn<Surat, String> colNomor, colUnitPengaju, colNomorSurat, colPerihal, colTanggal, colJam, colPelaksanaTugas,
             colStatusDisposisi, colStatusPengajuan, colPermasalahan, colStatusPembayaran;
+
+    @FXML
+    private ChoiceBox choiceBox;
+
+    @FXML
+    private TextField textField;
 
     private List<List<Object>> val;
 
@@ -77,7 +82,33 @@ public class TableController implements Initializable {
         colPermasalahan.setCellValueFactory(c -> c.getValue().getPermasalahan());
         colStatusPembayaran.setCellValueFactory(c -> c.getValue().getStatusPembayaran());
 
-        table.setItems(obList);
+
+        FilteredList<Surat> flSurat = new FilteredList<>(obList, p -> true);
+        table.setItems(flSurat);
+        //table.setItems(obList);
+
+        // Search box
+        choiceBox.getItems().setAll("Perihal", "No. Surat");
+        choiceBox.setValue("Perihal");
+
+        textField.textProperty().addListener((obs, oldValue, newValue) -> {
+                    switch (choiceBox.getValue().toString())//Switch on choiceBox value
+                    {
+                        case "Perihal":
+                            flSurat.setPredicate(p -> p.getPerihal().get().toLowerCase().contains(newValue.toLowerCase().trim()));//filter table by first name
+                            break;
+                        case "No. Surat":
+                            flSurat.setPredicate(p -> p.getNomorSurat().get().toLowerCase().contains(newValue.toLowerCase().trim()));//filter table by last name
+                            break;
+                    }
+        });
+
+        choiceBox.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal)
+                -> {//reset table and textfield when new choice is selected
+            if (newVal != null) {
+                textField.setText("");
+            }
+        });
     }
 
     // Detail data, nanti nampilin timeline

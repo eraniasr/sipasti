@@ -42,12 +42,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ChoiceBox prefWidth="173.0">
+            <ChoiceBox fx:id="choiceBox" prefWidth="173.0">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin>
             </ChoiceBox>
-            <TextField prefHeight="26.0" prefWidth="453.0" promptText="Cari di sini..." GridPane.columnIndex="1">
+            <TextField fx:id="textField" prefHeight="26.0" prefWidth="453.0" promptText="Cari di sini..." GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="30.0" />
                </GridPane.margin>
