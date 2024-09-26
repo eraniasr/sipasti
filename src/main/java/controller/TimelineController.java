@@ -26,7 +26,7 @@ public class TimelineController implements Initializable {
     private static Parent root;
 
     @FXML
-    private Label date1, date2, date3, date4, noSurat, perihal;
+    private Label date1, date2, date3, date4, noSurat, perihal, prosesWadek, prosesKabag, prosesJft;
 
     @FXML
     private Button backButton;
@@ -58,5 +58,8 @@ public class TimelineController implements Initializable {
         date2.setText(dates[1]);
         date3.setText(dates[2]);
         date4.setText(dates[3]);
+        prosesWadek.setText("Proses: " + dates[4]);
+        prosesKabag.setText("Proses: " + dates[5]);
+        prosesJft.setText("Proses: " + dates[6]);
     }
 }

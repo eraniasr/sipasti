@@ -37,12 +37,17 @@ public class Surat {
 
     public String[] createTimeline(){
         Timestamp dekanTimestamp, wadekTimestamp, kabagTimestamp, jftTimestamp;
+        String durasiWadek, durasiKabag, durasiJft;
         dekanTimestamp = new Timestamp(dekan, Timestamp.DATE_TYPE.MDY);
         wadekTimestamp = new Timestamp(wadek, Timestamp.DATE_TYPE.MDY);
         kabagTimestamp = new Timestamp(kabag, Timestamp.DATE_TYPE.MDY);
         jftTimestamp = new Timestamp(jft, Timestamp.DATE_TYPE.MDY);
+        durasiWadek = dekanTimestamp.durasi(wadekTimestamp);
+        durasiKabag = wadekTimestamp.durasi(kabagTimestamp);
+        durasiJft = kabagTimestamp.durasi(jftTimestamp);
         return new String[]{dekanTimestamp.getWaktuFormatted(), wadekTimestamp.getWaktuFormatted(),
-                kabagTimestamp.getWaktuFormatted(), jftTimestamp.getWaktuFormatted()};
+                kabagTimestamp.getWaktuFormatted(), jftTimestamp.getWaktuFormatted(),
+                durasiWadek, durasiKabag, durasiJft};
     }
 
     // Set up untuk bagian tabel

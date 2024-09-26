@@ -95,7 +95,7 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <Label alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="326.0" style="-fx-font-family: &quot;System&quot;; -fx-font-size: 22;" text="Proses:">
+                        <Label fx:id="prosesWadek" alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="326.0" style="-fx-font-family: &quot;System&quot;; -fx-font-size: 22;" text="Proses:">
                            <font>
                               <Font size="22.0" />
                            </font>
@@ -124,7 +124,7 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <Label alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="326.0" style="-fx-font-family: &quot;System&quot;; -fx-font-size: 22;" text="Proses:">
+                        <Label fx:id="prosesKabag" alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="326.0" style="-fx-font-family: &quot;System&quot;; -fx-font-size: 22;" text="Proses:">
                            <font>
                               <Font size="22.0" />
                            </font>
@@ -141,7 +141,7 @@
                               <Font size="22.0" />
                            </font>
                         </Label>
-                        <Label alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="326.0" style="-fx-font-family: &quot;System&quot;; -fx-font-size: 22;" text="Proses:">
+                        <Label fx:id="prosesJft" alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="326.0" style="-fx-font-family: &quot;System&quot;; -fx-font-size: 22;" text="Proses:">
                            <font>
                               <Font size="22.0" />
                            </font>

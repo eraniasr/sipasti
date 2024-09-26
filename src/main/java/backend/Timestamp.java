@@ -57,9 +57,14 @@ public class Timestamp implements Comparable<Timestamp> {
     }
 
     // Hitung durasi antara 2 timestamp, return string "* hari * jam * menit"
-    public String durasi(Timestamp mulai, Timestamp selesai){
+    public String durasi(Timestamp selesai){
         /// https://stackoverflow.com/questions/25747499/java-8-difference-between-two-localdatetime-in-multiple-units
-        LocalDateTime tempDateTime = LocalDateTime.from(mulai.getWaktu());
+
+        if (selesai.getWaktu() == null || waktu == null){
+            return "-";
+        }
+
+        LocalDateTime tempDateTime = LocalDateTime.from(waktu);
 
         long hari = tempDateTime.until(selesai.getWaktu(), ChronoUnit.DAYS);
         tempDateTime = tempDateTime.plusDays(hari);
