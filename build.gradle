@@ -13,7 +13,7 @@ plugins {
     id 'org.beryx.jlink' version '2.25.0'
 }
 
-mainClassName = 'MainFrame'
+mainClassName = 'com.sipasti.Launcher'
 sourceCompatibility = '18'
 targetCompatibility = '18'
 version = '1.0'
