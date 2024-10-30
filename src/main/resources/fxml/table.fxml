@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="CENTER" prefHeight="629.0" prefWidth="1014.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TableController">
+<GridPane alignment="CENTER" prefHeight="629.0" prefWidth="1014.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipasti.controller.TableController">
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="454.0" prefWidth="818.0" style="-fx-background-color: #ffffff;" GridPane.rowIndex="1">
          <content>

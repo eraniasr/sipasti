@@ -1,16 +1,14 @@
-import backend.SheetsQuickstart;
+package com.sipasti;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.Arrays;
-import java.util.List;
 
 public class MainFrame extends Application {
 
@@ -28,9 +26,5 @@ public class MainFrame extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }

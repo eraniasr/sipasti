@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToWidth="true" prefHeight="1089.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TimelineController">
+<ScrollPane fitToWidth="true" prefHeight="1089.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipasti.controller.TimelineController">
    <content>
       <VBox style="-fx-background-color: #ffffff;">
          <children>

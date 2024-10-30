@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E7F4F6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E7F4F6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sipasti.controller.LoginController">
    <children>
       <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" onAction="#loginButtonClick" style="-fx-background-color: #ffffff; -fx-font-family: &quot;System&quot;; -fx-font-size: 25; -fx-font-weight: bold; -fx-pref-height: 50; -fx-pref-width: 525; -fx-border-color: #38649c; -fx-border-width: 2px; -fx-border-radius: 8px;" text="Login untuk masuk ke SIPASTI" textFill="#38649c" />
    </children>

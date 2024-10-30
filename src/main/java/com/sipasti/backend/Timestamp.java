@@ -1,4 +1,4 @@
-package backend;
+package com.sipasti.backend;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
