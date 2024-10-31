@@ -1,6 +1,5 @@
 package com.sipasti.controller;
 
-import com.sipasti.backend.SheetsQuickstart;
 import com.sipasti.backend.Surat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -16,8 +14,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.GeneralSecurityException;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class TimelineController implements Initializable {
@@ -26,7 +22,8 @@ public class TimelineController implements Initializable {
     private static Parent root;
 
     @FXML
-    private Label date1, date2, date3, date4, noSurat, perihal, prosesWadek, prosesKabag, prosesJft;
+    private Label date1, date2, date3, date4, date5,
+            noSurat, perihal, prosesWadek, prosesKabag, prosesJftKeuangan, prosesJftPengadaan;
 
     @FXML
     private Button backButton;
@@ -58,8 +55,10 @@ public class TimelineController implements Initializable {
         date2.setText(dates[1]);
         date3.setText(dates[2]);
         date4.setText(dates[3]);
-        prosesWadek.setText("Proses: " + dates[4]);
-        prosesKabag.setText("Proses: " + dates[5]);
-        prosesJft.setText("Proses: " + dates[6]);
+        date5.setText(dates[4]);
+        prosesWadek.setText("Proses: " + dates[5]);
+        prosesKabag.setText("Proses: " + dates[6]);
+        prosesJftKeuangan.setText("Proses: " + dates[7]);
+        prosesJftPengadaan.setText("Proses: " + dates[8]);
     }
 }

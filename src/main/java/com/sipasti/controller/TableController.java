@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+
 import java.io.IOException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
@@ -42,7 +43,7 @@ public class TableController implements Initializable {
             throw new RuntimeException(e);
         }
 
-        //table = new TableView<>();
+        table.setFixedCellSize(35.0);
         table.setRowFactory(suratTableView -> {
             TableRow<Surat> row = new TableRow<>();
             row.setOnMouseClicked(mouseEvent -> {
@@ -85,7 +86,6 @@ public class TableController implements Initializable {
 
         FilteredList<Surat> flSurat = new FilteredList<>(obList, p -> true);
         table.setItems(flSurat);
-        //table.setItems(obList);
 
         // Search box
         choiceBox.getItems().setAll("Perihal", "No. Surat");

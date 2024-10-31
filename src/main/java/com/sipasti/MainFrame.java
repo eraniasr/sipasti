@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
@@ -26,5 +27,12 @@ public class MainFrame extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
+
+        stage.setOnCloseRequest((closeEvent) -> {
+            File cred = new File("C:\\SIPASTI\\tokens\\StoredCredential");
+            File token = new File("C:\\SIPASTI\\tokens");
+            cred.delete();
+            token.delete();
+        });
     }
 }

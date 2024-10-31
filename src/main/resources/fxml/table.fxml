@@ -14,7 +14,7 @@
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="454.0" prefWidth="818.0" style="-fx-background-color: #ffffff;" GridPane.rowIndex="1">
          <content>
-            <TableView fx:id="table" prefHeight="502.0" prefWidth="949.0">
+            <TableView fx:id="table" prefHeight="502.0" prefWidth="949.0" style="-fx-font-size: 17px">
                <columns>
                   <TableColumn fx:id="colNomor" prefWidth="34.40002590417862" text="No." />
                   <TableColumn fx:id="colUnitPengaju" prefWidth="124.7999496459961" text="Unit Pengusul Ajuan" />
@@ -42,12 +42,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ChoiceBox fx:id="choiceBox" prefWidth="173.0">
+            <ChoiceBox fx:id="choiceBox" prefWidth="173.0" prefHeight="35.0" style="-fx-font-size:17px">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin>
             </ChoiceBox>
-            <TextField fx:id="textField" prefHeight="26.0" prefWidth="453.0" promptText="Cari di sini..." GridPane.columnIndex="1">
+            <TextField fx:id="textField" prefHeight="35.0" prefWidth="453.0" promptText="Cari di sini..." GridPane.columnIndex="1" style="-fx-font-size:17px">
                <GridPane.margin>
                   <Insets right="30.0" />
                </GridPane.margin>

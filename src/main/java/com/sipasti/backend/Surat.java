@@ -7,7 +7,7 @@ import java.util.List;
 public class Surat {
     private SimpleStringProperty tanggalPengajuan, jamPengajuan, unitPengaju, nomorSurat, perihal, statusDisposisi,
             pelaksanaTugas, statusPengajuan, permasalahan, statusPembayaran;
-    private String dekan, wadek, kabag, jft;
+    private String dekan, wadek, kabag, jftKeuangan, jftPengadaan;
     private Integer nomor;
 
     public Surat(List<Object> surat, int index){
@@ -25,7 +25,8 @@ public class Surat {
             statusDisposisi = new SimpleStringProperty((String) surat.get(39));
             statusPengajuan = new SimpleStringProperty((String) surat.get(42));
             permasalahan = new SimpleStringProperty((String) surat.get(43));
-            jft = (String) surat.get(68);
+            jftKeuangan = (String) surat.get(68);
+            jftPengadaan = (String) surat.get(72);
             statusPembayaran = new SimpleStringProperty((String) surat.get(87));
         }
 
@@ -36,18 +37,24 @@ public class Surat {
     }
 
     public String[] createTimeline(){
-        Timestamp dekanTimestamp, wadekTimestamp, kabagTimestamp, jftTimestamp;
-        String durasiWadek, durasiKabag, durasiJft;
+        Timestamp dekanTimestamp, wadekTimestamp, kabagTimestamp, jftKeuanganTimestamp, jftPengadaanTimestamp;
+        String durasiWadek, durasiKabag, durasiJftKeuangan, durasiJftPengadaan;
+
         dekanTimestamp = new Timestamp(dekan, Timestamp.DATE_TYPE.MDY);
         wadekTimestamp = new Timestamp(wadek, Timestamp.DATE_TYPE.MDY);
         kabagTimestamp = new Timestamp(kabag, Timestamp.DATE_TYPE.MDY);
-        jftTimestamp = new Timestamp(jft, Timestamp.DATE_TYPE.MDY);
+        jftKeuanganTimestamp = new Timestamp(jftKeuangan, Timestamp.DATE_TYPE.MDY);
+        jftPengadaanTimestamp = new Timestamp(jftPengadaan, Timestamp.DATE_TYPE.MDY);
+
         durasiWadek = dekanTimestamp.durasi(wadekTimestamp);
         durasiKabag = wadekTimestamp.durasi(kabagTimestamp);
-        durasiJft = kabagTimestamp.durasi(jftTimestamp);
+        durasiJftKeuangan = kabagTimestamp.durasi(jftKeuanganTimestamp);
+        durasiJftPengadaan = jftKeuanganTimestamp.durasi(jftPengadaanTimestamp);
+
         return new String[]{dekanTimestamp.getWaktuFormatted(), wadekTimestamp.getWaktuFormatted(),
-                kabagTimestamp.getWaktuFormatted(), jftTimestamp.getWaktuFormatted(),
-                durasiWadek, durasiKabag, durasiJft};
+                kabagTimestamp.getWaktuFormatted(), jftKeuanganTimestamp.getWaktuFormatted(),
+                jftPengadaanTimestamp.getWaktuFormatted(),
+                durasiWadek, durasiKabag, durasiJftKeuangan, durasiJftPengadaan};
     }
 
     // Set up untuk bagian tabel
