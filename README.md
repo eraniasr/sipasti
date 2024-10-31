@@ -10,7 +10,8 @@ Aplikasi ini hanya akan mengakses data surat yang akan ditampilkan di SIPASTI, d
 
 ## Cara penggunan:
 
-1. [Klik tautan ini](https://drive.usercontent.google.com/download?id=1eVID8kpjmld4SBmxg4vcytNTH03ie6_i&export=download) untuk mengunduh aplikasi, lalu tekan tombol `Download anyway`.
+1. <a href="https://drive.usercontent.google.com/download?id=1eVID8kpjmld4SBmxg4vcytNTH03ie6_i&export=download" target="_blank">Klik di sini</a>
+   untuk mengunduh aplikasi, lalu tekan tombol `Download anyway`.
    ![Download](src/main/resources/img/readme_1.png)
 2. Buka file yang sudah diunduh. Setelahnya akan muncul dialog untuk setup aplikasi.
    Pastikan untuk menceklis bagian Create a desktop shortcut, lalu pilih Next.
