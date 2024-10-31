@@ -8,6 +8,8 @@ Sistem GUI (*graphical user interface*) ini digunakan untuk menampilkan data sur
 Aplikasi ini membutuhkan izin untuk membaca file untuk dimuat di Google Sheets. 
 Aplikasi ini hanya akan mengakses data surat yang akan ditampilkan di SIPASTI, dan tidak memiliki akses terhadap data pribadi anda.
 
+<button style="background-color:lightblue; padding:10px; border-radius: 4px;" name="Download" onclick="window.open('https://drive.usercontent.google.com/download?id=1eVID8kpjmld4SBmxg4vcytNTH03ie6_i&export=download','_blank')" > Unduh program di sini</button>
+
 ## Cara penggunan:
 
 1. <a href="https://drive.usercontent.google.com/download?id=1eVID8kpjmld4SBmxg4vcytNTH03ie6_i&export=download" target="_blank">Klik di sini</a>
